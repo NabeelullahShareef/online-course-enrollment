@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Course Enrollment</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🎓 Online Course Enrollment</h1>
+    <p>Pick a course, enroll in seconds, and start learning.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Enroll in a Course</h2>
+      <form id="enrollForm">
+        <label>Full Name
+          <input type="text" name="fullName" required placeholder="e.g. Nabeel Ullah Shareef" />
+        </label>
+        <label>Email
+          <input type="email" name="email" required placeholder="you@example.com" />
+        </label>
+        <label>Phone
+          <input type="tel" name="phone" required placeholder="9876543210" />
+        </label>
+        <label>Course
+          <select name="course" required>
+            <option value="">-- Select a course --</option>
+            <option>Web Development Bootcamp</option>
+            <option>Python Programming</option>
+            <option>Java Programming</option>
+            <option>Data Science Basics</option>
+            <option>UI/UX Design</option>
+            <option>Cyber Security Fundamentals</option>
+          </select>
+        </label>
+        <label>Preferred Batch
+          <select name="batch" required>
+            <option value="">-- Select a batch --</option>
+            <option>Weekday Morning</option>
+            <option>Weekday Evening</option>
+            <option>Weekend</option>
+          </select>
+        </label>
+        <label>Message (optional)
+          <textarea name="message" rows="3" placeholder="Anything we should know?"></textarea>
+        </label>
+        <button type="submit">Enroll Now</button>
+        <p id="formMessage" class="message"></p>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>📊 Enrollments</h2>
+      <p id="stats">Loading...</p>
+      <div class="filters">
+        <input type="text" id="searchInput" placeholder="Search by name or email..." />
+        <select id="courseFilter">
+          <option value="">All Courses</option>
+          <option>Web Development Bootcamp</option>
+          <option>Python Programming</option>
+          <option>Java Programming</option>
+          <option>Data Science Basics</option>
+          <option>UI/UX Design</option>
+          <option>Cyber Security Fundamentals</option>
+        </select>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Course</th>
+            <th>Batch</th>
+            <th>Enrolled On</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="enrollmentTable"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built with HTML, CSS, JavaScript, Node.js, Express &amp; SQLite</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
